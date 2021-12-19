@@ -1,14 +1,14 @@
 <script>
-    let temperature = "";
+    let weathertemperature = "";
     let location = "";
-    let description = "";
+    let weatherdescription = "";
 
     async function getWeather() {
     fetch('https://goweather.herokuapp.com/weather/' + location)
       .then((response) => response.json())
       .then((data) => {
-        temperature = data.temperature; // Path for temperature
-        description = data.description; // Path for description
+        weathertemperature = data.temperature; // Path for temperature
+        weatherdescription = data.description; // Path for description
       });
   }
 </script>
@@ -20,5 +20,5 @@
     <button type="submit">Check</button>
 </form>
 
-<p>Temperature: {temperature}</p>
-<p>Description: {description}</p>
+<p>Temperature: {weathertemperature}</p>
+<p>Description: {weatherdescription}</p>
